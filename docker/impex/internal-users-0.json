@@ -1,0 +1,27 @@
+{
+  "realm" : "internal",
+  "users" : [ {
+    "id" : "e30c3c65-e8d8-4fd8-b907-ab24fcd8b5f2",
+    "username" : "idaintern",
+    "firstName" : "Ida",
+    "lastName" : "Intern",
+    "email" : "idaintern@example.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1750862052178,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "586d3b2a-23db-4f79-858b-430496c543ca",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1751007236022,
+      "secretData" : "{\"value\":\"6G0lUx4EPdIWgJZ+zIPBk7M16OXxHOHJpXWfgzZxEH8=\",\"salt\":\"7svqlkuYr5jf2K9cbEYVoQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-internal" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

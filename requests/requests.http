@@ -1,0 +1,38 @@
+### Get tokens from internal realm
+POST http://localhost:8080/realms/internal/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = password &
+client_id = internal-cli &
+client_secret = ttaLQppzpcYj016gqELBrj1RcQSDt9pW &
+username = idaintern &
+password = test1234 &
+scope = openid profile email
+
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+### Get tokens from external realm
+POST http://localhost:8080/realms/external/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = password &
+client_id = external-cli &
+client_secret = P3mWZacixWo5cmSLIXo8gZmYAm26JLzl &
+username = emmaextern &
+password = test1234 &
+scope = openid profile email
+
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+### Token Exchange - Exchange external token for internal token
+POST http://localhost:8080/realms/internal/protocol/openid-connect/token
+Authorization: Basic aW50ZXJuYWwtY2xpOnR0YUxRcHB6cGNZajAxNmdxRUxCcmoxUmNRU0R0OXBX
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = urn:ietf:params:oauth:grant-type:token-exchange &
+subject_token = {{access_token}} &
+subject_token_type = urn:ietf:params:oauth:token-type:access_token
